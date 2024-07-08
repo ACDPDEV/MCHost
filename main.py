@@ -37,7 +37,13 @@ def run():
     ngrok.set_auth_token(authtoken)
     if os.path.exists(server_path):
         tunnel = ngrok.connect(addr="25565", proto="tcp")
+        print("")
+        print("")
+        print("---------------------------------------------")
         print(f"IP de tu servidor: {tunnel.public_url}")
+        print("---------------------------------------------")
+        print("")
+        print("")
         run_command("cd MCserver && sudo bash run.sh")
     else:
         # sudo mkdir MCserver
